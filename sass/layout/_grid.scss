@@ -1,0 +1,37 @@
+.row{
+    max-width: $row-width;
+    margin: 0 auto;
+    @include clearFix;
+    &:not(:last-child){
+        margin-bottom: $vertival-space;
+    }
+
+    [class^="col-"]{
+        float: left;
+        &:not(:last-child){
+            margin-right: $horizontol-space;
+        }
+    }
+    .col-1-of-1{
+        width: 100%;
+    }
+    .col-1-of-2{
+        width: calc((100% - #{$horizontol-space}) / 2);
+    }
+    .col-1-of-3{
+        width: calc((100% - 2*#{$horizontol-space}) / 3);
+    }
+    .col-2-of-3{
+        width: calc(2 * ((100% - 2*#{$horizontol-space}) / 3) + #{$horizontol-space});
+    }
+
+    .col-1-of-4{
+        width: calc((100% - 3*#{$horizontol-space}) / 4);
+    }
+    .col-2-of-4{
+        width: calc(2 * ((100% - 3 * #{$horizontol-space}) / 4) + #{$horizontol-space});
+    }
+    .col-3-of-4{
+        width: calc(3 * ((100% - 3 * #{$horizontol-space}) / 4) + 2*#{$horizontol-space});
+    }
+}
